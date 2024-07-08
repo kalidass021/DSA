@@ -1,37 +1,49 @@
-// rotate array leet code problem
+let arr = [1, 2, 3, 4, 5];
 
-let nums = [1, 2, 3, 4, 5, 6, 7];
+let n = arr.length;
 
-let k = 3;
+function secondLargest(arr, n) {
+  let largest = arr[0];
 
-function rotate() {
-  n = nums.length;
+  let sLargest = -1; // assuming arr is not containing any negative numbers
 
-  k = k % n;
+  for (let i = 1; i < n; i++) {
+    if (arr[i] > largest) {
+      sLargest = largest;
 
-  // creating the temp arr and adding the last k elements in it
-
-  let temp = [];
-
-  for (let i = n - k; i < n; i++) {
-    temp.push(nums[i]);
-
-    // temp[i-(n-k)] = nums[i];
+      largest = arr[i];
+    } else if (arr[i] < largest && arr[i] > sLargest) {
+      sLargest = arr[i];
+    }
   }
 
-  // shifting the remaning nums elements towards right
-
-  for (let i = n - 1; i >= k; i--) {
-    nums[i] = nums[i - k];
-  }
-
-  // placing the temp elements at the beginning of nums
-
-  for (let i = 0; i < k; i++) {
-    nums[i] = temp[i];
-  }
-
-  return nums;
+  return sLargest;
 }
 
-console.log(rotate(nums, k));
+function secondSmallest(arr, n) {
+  let smallest = arr[0];
+
+  let sSmallest = Number.MAX_SAFE_INTEGER;
+
+  for (let i = 1; i < n; i++) {
+    if (arr[i] < smallest) {
+      sSmallest = smallest;
+
+      smallest = arr[i];
+    } else if (arr[i] !== smallest && arr[i] < sSmallest) {
+      sSmallest = arr[i];
+    }
+  }
+
+  return sSmallest;
+}
+
+function secondLargestAndSecondSmallest(arr, n) {
+  let sLargest = secondLargest(arr, n);
+
+  let sSmallest = secondSmallest(arr, n);
+
+  return [sLargest, sSmallest];
+}
+
+console.log(secondLargestAndSecondSmallest(arr, n));
