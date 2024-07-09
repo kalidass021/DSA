@@ -14,4 +14,11 @@ function linearSearch(arr, n, num) {
   return -1;
 }
 
-console.log(linearSearch(arr, n, num));
+// console.log(linearSearch(arr, n, num));
+
+
+// language specific solution
+
+let foundIndex = arr.findIndex(element => element === num);
+
+console.log('foundIndex', foundIndex);
