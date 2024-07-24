@@ -62,10 +62,14 @@ function optimal(piles, h) {
     // total hours
     let totalHours = calculateTotalHours(piles, mid);
 
+    // if totalHours <= h means koko can eat all the bananas in given time
+    // if totalHours exceeds h means koko can't eat all banans within given time
     if (totalHours <= h) {
       ans = mid;
       // eliminate right
       // search on left
+      // by searching in the left half we're being cautious,
+      // we wan't to find the smallest k that works
       high = mid-1;
     } else {
       // eliminate left
