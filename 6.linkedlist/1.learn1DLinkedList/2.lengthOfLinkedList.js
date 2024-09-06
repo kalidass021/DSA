@@ -1,4 +1,4 @@
-// convert array into linked list
+// length of the linked list
 // in sheet it's a 4th problem
 let arr = [2, 1, 3, 8];
 
