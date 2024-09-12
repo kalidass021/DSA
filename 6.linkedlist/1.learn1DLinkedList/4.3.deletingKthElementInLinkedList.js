@@ -1,15 +1,14 @@
-// deleting a tail node in linked list
+// deleting a kth element in linked list
 
 // in sheet it's a 3rd problem
-
 // convert array into linked list
-
 let arr = [1, 8, 9, 3];
-// define a node class to represent each element in the linked list
 
+// define a node class to represent each element in the linked list
 class Node {
   constructor(data1) {
     this.data = data1; // store the data
+
     this.next = null; // pointer to the next node, initially set to null
   }
 }
@@ -56,31 +55,47 @@ function printLinkedList(head) {
   }
 }
 
-// detetion of tail
-function removeTail(head) {
-  // head === null or head.next === null
-  // head.next === null means linked list contains only one element
-  if (!head || !head.next) {
+// delete kth element in the linked list
+function removeKthElement(head, k) {
+  // if the list is empty, return null
+  if (!head) {
     return null;
   }
 
-  let temp = head;
-  // find the second last element
-  // traverse the linked list until the second-to-last node
-  // temp.next.next !== null
+  // if k = 1, remove head
+  // move the head to next
+  if (k === 1) {
+    head = head.next;
+    return head;
+    // or
+    // return head.next;
+  }
 
-  while (temp.next.next) {
+  // if k is inbetween any element
+  // counter
+  let cnt = 0;
+  let temp = head;
+  let prev = null;
+  // while temp !== null
+  while (temp) {
+    cnt++;
+    // condition
+    if (cnt === k) {
+      prev.next = prev.next.next;
+    }
+    // remember temp as the previous while moving to next
+    prev = temp;
+    // traversal
     temp = temp.next;
   }
-  // set the next pointer of the second-to-last node to null
-  temp.next = null;
-  // returning the head
+
+  // above logic will delete the tail of the linked list if k = 4
+  // returning the head of the linked list
   return head;
 }
 
 let head = arrToLinkedList(arr);
-// head of modified linked list
-head = removeTail(head);
-
-// print the linked list 
+// head of the modified linked list
+head = removeKthElement(head, 3);
+// print the linked list
 printLinkedList(head);
