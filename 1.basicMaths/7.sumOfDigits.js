@@ -50,3 +50,5 @@ function sumOfDigitsRec(num) {
 }
 
 console.log(sumOfDigitsRec(12345)); // 15
+
+// language advantage solution if typecast allowed
