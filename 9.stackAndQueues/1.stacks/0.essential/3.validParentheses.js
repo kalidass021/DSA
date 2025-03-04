@@ -54,3 +54,7 @@ function isEmpty(stack) {
 
 console.log(validParentheses('()[]{}')); // true
 console.log(validParentheses('(]')); // false
+
+
+// Time complexity = O(n)
+// Space complexity = O(n)
