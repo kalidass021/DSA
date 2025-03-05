@@ -28,7 +28,7 @@ class Stack {
   pop() {
     // check if the stack is empty
     if (this.isEmpty()) {
-      return `Stack is empty. Can't perform pop`;
+      throw new Error(`Stack is empty. Can't perform pop`);
     }
     // remove and return the top element of the stack
     return this.stack.pop();
@@ -38,7 +38,7 @@ class Stack {
   peek() {
     // check if the stack is empty
     if (this.isEmpty()) {
-      return `Stack is empty. Can't perform peek`;
+      throw new Error(`Stack is empty. Can't perform peek`);
     }
     // return the top element of the stack
     return this.stack[this.size() - 1];
@@ -52,7 +52,7 @@ class Stack {
   // print all the elements in the stack
   printStack() {
     if (this.isEmpty()) {
-      return `Stack is empty. Can't perform printStack`;
+      throw new Error(`Stack is empty. Can't perform printStack`);
     }
     console.info('Stack elements are:');
     for (let i = this.size() - 1; i >= 0; i--) {
