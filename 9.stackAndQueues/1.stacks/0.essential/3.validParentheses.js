@@ -15,7 +15,7 @@ function validParentheses(str) {
     // initialize an empty stack
   let stack = [];
 
-  // iterate through each character in the empty string
+  // iterate through each character in the string
   for (let i = 0; i < str.length; i++) {
     let char = str[i];
 
