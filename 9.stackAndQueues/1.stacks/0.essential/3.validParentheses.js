@@ -17,6 +17,7 @@ function validParentheses(str) {
 
   // iterate through each character in the string
   for (let i = 0; i < str.length; i++) {
+    // current character
     let char = str[i];
 
     // if the character is an opening bracket, push it onto the stack
