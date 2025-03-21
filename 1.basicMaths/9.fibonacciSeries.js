@@ -28,7 +28,7 @@ console.log(fibonacci(5));
 
 // we can directly reverse the above result using inbuilt reverse function
 // or we can reverse using for (let i=arr.length - 1; i>=0; i--)
-// but these will increase the time complexity to O(n^2)
+// but these will increase the time complexity to O(2n)
 
 function fibonacciInReverse(num) {
     if (typeof num !== 'number' || !Number.isInteger(num) || num<0) {
