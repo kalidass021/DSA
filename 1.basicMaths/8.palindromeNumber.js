@@ -1,4 +1,4 @@
-// find the given number is polindrome or not
+// find the given number is palindrome or not
 
 function reverseNumber(n) {
   let temp = n;
@@ -14,7 +14,7 @@ function reverseNumber(n) {
   return reversed;
 }
 
-function polindromeOrNot(num) {
+function palindromeOrNot(num) {
   if (typeof num !== 'number' || !Number.isInteger(num)) {
     return `${num} is not valid`;
   }
@@ -22,11 +22,11 @@ function polindromeOrNot(num) {
   let reversedNum = reverseNumber(num);
 
   if (num === reversedNum) {
-    return `${num} is a polindrome number`;
+    return `${num} is a palindrome number`;
   }
 
   // else
-  return `${num} is a not polindrome number`;
+  return `${num} is a not palindrome number`;
 }
 
-console.log(polindromeOrNot(121));
+console.log(palindromeOrNot(121));
