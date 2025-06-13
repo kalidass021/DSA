@@ -13,10 +13,11 @@ function fibonacci(num) {
         return [0, 1];
     }
 
-    fibSeries = [0, 1];
+    let fibSeries = [0, 1];
 
     for (let i=2; i<num; i++) {
-        fibSeries.push(fibSeries[i-2] + fibSeries[i-1]);
+        // fibSeries.push(fibSeries[i-2] + fibSeries[i-1]);
+        fibSeries.push(fibSeries.at(-1) + fibSeries.at(-2));
     }
 
     return fibSeries;
