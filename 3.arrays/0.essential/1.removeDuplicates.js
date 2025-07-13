@@ -41,6 +41,25 @@ function removeDuplicatesHash(arr) {
 
 console.log(removeDuplicatesHash(arr));
 
+// using set
+
+function removeDuplicatesSet(arr) {
+  let mySet = new Set();
+
+  let uniqueArr = []; // to store the result
+
+  for (let val of arr) {
+    if (!mySet.has(val)) {
+      mySet.add(val); // add the val to the set
+      uniqueArr.push(val)
+    }
+  }
+
+  return uniqueArr;
+}
+
+console.log(removeDuplicatesSet(arr));
+
 // simple solution using language advantage
 
 function removeDuplicates2(arr) {
@@ -52,3 +71,4 @@ function removeDuplicates2(arr) {
 }
 
 console.log(removeDuplicates2(arr));
+
