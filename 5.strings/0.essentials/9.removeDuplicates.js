@@ -17,3 +17,12 @@ function removeDuplicatesAndSort(str) {
 }
 
 console.log(removeDuplicatesAndSort('IIATJYBRAHBARRTTSS')); // ABHIJRSTY
+
+function removeDuplicatesAndSortSet(str) {
+    let uniqueChars = [...new Set(str)];
+    let sortedStr = uniqueChars.sort().join('');
+
+    return sortedStr;
+}
+
+console.log(removeDuplicatesAndSortSet('IIATJYBRAHBARRTTSS'));
