@@ -4,12 +4,13 @@
 function capitalizeFirstCharacterOfEachWord(str) {
     let words = str.split(' ');
 
-    let res;
+    let res = [];
 
     for (let word of words) {
-
+        let capitalized = word[0].toUpperCase() + word.slice(1);
+        res.push(capitalized);
     }
-    return res;
+    return res.join(' ');
 }
 
 console.log(capitalizeFirstCharacterOfEachWord('my name is kalidass'));
