@@ -14,6 +14,11 @@ let nestedObj = {
 
 function flattenObject(obj, parentKey='', result={}) {
     for (let key in obj) {
+        /* 
+            * the below if statement is a safety check to ensure,
+            * we're only iterating over the object's own properties,
+            * not properties inherited from it's prototype chain
+        */
         if (!obj.hasOwnProperty(key)) continue;
 
         const newKey = parentKey ? `${parentKey}.${key}` : key;
