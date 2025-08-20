@@ -15,6 +15,20 @@ function reverseTheString(str) {
 
 console.log(reverseTheString(str)); // gfedcba
 
+// using recursion
+
+function reverseTheStringRecursion(str) {
+  let temp = str;
+
+  if (temp === '') {
+    return '';
+  } else {
+    return temp[temp.length - 1] + reverseTheString(temp.slice(0, temp.length - 1));
+  }
+}
+
+console.log('recursion', reverseTheStringRecursion(str));
+
 // simple solution using language advantage
 
 function reverseTheString2(str) {
