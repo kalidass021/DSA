@@ -11,7 +11,7 @@ function reverseTheArr(arr) {
   return result;
 }
 
-console.log(reverseTheArr(arr));
+console.log('for loop', reverseTheArr(arr));
 
 // reverse the array using recursion
 
@@ -27,4 +27,10 @@ function reverseTheArrRecursion(arr) {
     ];
 }
 
-console.log(reverseTheArrRecursion(arr));
+console.log('recursion', reverseTheArrRecursion(arr));
+
+function reverseTheArrReduce(arr) {
+    return arr.reduce((acc, curr) => [curr, ...acc], []);
+}
+
+console.log('reduce', reverseTheArrReduce(arr));
