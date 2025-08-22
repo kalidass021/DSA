@@ -29,3 +29,35 @@ function maxSubArraySum(arr, n) {
 }
 
 console.log(maxSubArraySum(arr, n));
+
+// follow up question return the array as well
+
+function maxSubArraySumV2(arr, n) {
+    // initially
+    let sum = 0; // current running sum
+    let maxSum = Number.MIN_SAFE_INTEGER; // maximum sum found so far
+    // indices to track the sub array 
+    let start = 0, end = 0, tempStart = 0;
+
+    for (let i=0; i<n; i++) {
+        sum += arr[i];
+
+        if (sum > maxSum) {
+            maxSum = sum;
+            start = tempStart;
+            end = i;
+        }
+
+        if (sum < 0) {
+            sum = 0;
+            tempStart = i+1;
+        }
+    }
+
+    return {
+        maxSum,
+        subArray: arr.slice(start, end+1),
+    }
+}
+
+console.log(maxSubArraySumV2(arr, n));
