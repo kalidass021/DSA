@@ -31,5 +31,29 @@ function isMagicNumber(num) {
 
 console.log('1234', isMagicNumber(1234));
 
+// magic number using recursion
 
-// Todo: 2 approaches needs to be added 1. normal while loop 2. using recursion
+/* 
+    * Recursively reduces a number to a single digit by summing it's digits.
+    * Then checks if the final digit is 1 (i,e., magic number)
+*/
+
+function isMagicNumberRecursion(num) {
+    // Base Case: if num is a single digit, return whether it's 1
+    if (num < 10) return num === 1;
+    
+    // Recursive case: sum digits and call the function again
+    const digitsSum = sumDigits(num);
+
+    return isMagicNumber(digitsSum);
+}
+
+// helper function to sum the digits of a number
+
+function sumDigits(n) {
+    if (n === 0) return 0;
+
+    return (n % 10) + sumDigits(Math.floor(n / 10));
+}
+
+console.log('recursion 1234', isMagicNumberRecursion(1234));
