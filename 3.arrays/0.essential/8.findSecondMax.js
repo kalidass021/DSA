@@ -43,3 +43,22 @@ function secondMax(arr) {
 
 
 console.log(secondMax([1, 2, 3, 4, 5]));
+
+function secondMaxReduce(arr) {
+    if (arr.length < 2) return `Array must contain at least two elements`;
+
+    const { max, secondMax } = arr.reduce(( {max, secondMax }, num) => {
+        if (num > max) {
+            return { max: num, secondMax: max };
+        } else if (num > secondMax && num < max) {
+            return { max, secondMax: num };
+        }
+
+        return { max, secondMax };
+    }, { max: Number.MIN_SAFE_INTEGER, secondMax: Number.MAX_SAFE_INTEGER });
+
+    return secondMax === Number.MIN_SAFE_INTEGER ? `No maximum found` : secondMax;
+}
+
+console.log('secondMaxReduce', secondMaxReduce([1, 2, 3, 4, 5]));
+
