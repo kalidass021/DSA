@@ -37,7 +37,7 @@ function secondMax(arr) {
 
  // if secondMax was never updated, return a message; otherwise, return secondMax
 
- return secondMax === Number.MAX_SAFE_INTEGER ? 'No second maximum found' : secondMax;
+ return secondMax === Number.MIN_SAFE_INTEGER ? 'No second maximum found' : secondMax;
 
 }
 
