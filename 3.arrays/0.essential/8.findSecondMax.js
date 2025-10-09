@@ -62,3 +62,7 @@ function secondMaxReduce(arr) {
 
 console.log('secondMaxReduce', secondMaxReduce([1, 2, 3, 4, 5]));
 
+/* 
+    Note: In this problem if no secondMax found, instead returing message we can return -1 also
+*/
+
