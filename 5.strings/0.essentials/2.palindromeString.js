@@ -3,6 +3,9 @@
 function palindromeString(str) {
     let reversed = ''; // initially
 
+    // edge case
+    if (str[0] !== str[str.length-1]) return false;
+
     for (let i=str.length-1; i>=0; i--) {
         reversed += str[i]; // append the current character
     }
@@ -34,3 +37,20 @@ function palindromeString2(str) {
 
 console.log(palindromeString2('hello')); // false
 console.log(palindromeString('madam')); // true
+
+
+function polindromeStringWhile(str) {
+    let left = 0;
+    let  right = str.length - 1;
+
+    while (left < right) {
+        if (str[left] !== str[right]) return false;
+
+        left++;
+        right--;
+    }
+
+    return true;
+}
+
+console.log(polindromeStringWhile('madam')); // true
