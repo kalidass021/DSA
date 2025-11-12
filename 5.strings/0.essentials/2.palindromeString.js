@@ -54,3 +54,17 @@ function polindromeStringWhile(str) {
 }
 
 console.log(polindromeStringWhile('madam')); // true
+
+function polindromeStringPureRecursion(str, left=0, right=str.length - 1) {
+    // Base case: when pointers cross, all chars matched
+    if (left >= right) return true;
+
+    // if mismatch found
+    if (str[left] !== str[right]) return false;
+
+    // recursive call for inner substring
+    return polindromeStringPureRecursion(str, left+1, right-1);
+}
+
+
+console.log(polindromeStringPureRecursion('madam')); // true
